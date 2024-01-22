@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking.com</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" href="../static/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">Booking.com</h1>
+        <div>
+            <a th:href="@{/hotel/create}">
+            <button class="btn">Add hotel</button>
+            <button class="btn">Register</button>
+            <button class="btn">Sign in</button>
+            </a>
+        </div>
+
+    </div>
+<div class="center-form">
+    <form class="search-form" th:action="@{/hotel}" method="get">
+        <select class="input" id="" name="">
+            <option th:each="city : ${T(com.example.bookingplatform.address.entity.City).values()}"
+                    th:text="${city}"
+                    th:value="${city}">
+            </option>
+        </select>
+        <input class="input" type="datetime-local">
+        <input class="input" type="datetime-local" >
+        <input class="input" type="number">
+        <button class="btn secondary" type="submit">Search</button>
+    </form>
+</div>
+
+    <th:block th:if="${hotels}  != null">
+            <h1 th:each="hotel :  ${hotels}" th:text="${hotel.name}"></h1>
+    </th:block>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  th:href="@{../../css/style.css}"  href="../../static/css/style.css">
+</head>
+<body class="login-body" >
+<div class="login">
+<div class="login-header" >
+    <h1>Login</h1>
+</div>
+        <div class="login-form" >
+            <form method="post" th:action="@{/auth/login}">
+            <input class="login-input" name="phoneNumber" type="text" placeholder="Phone number" required>
+                <br>
+                <br>
+            <input class="login-input" name="password" type="text" placeholder="Password" required>
+                <br>
+                <br>
+            <label for="">Remember me<input type="checkbox" name="rememberMe" id=""></label>
+            <a th:href="@{/auth/phoneNumber}">Forget phone number</a>
+                <br>
+                <br>
+            <button type="submit" class="btn1-login">Login</button>
+                <br>
+                <br>
+            <a th:href="@{/auth/register}" class="sign-up">Sign Up</a>
+            </form>
+        </div>
+</div>
+</body>
+</html>

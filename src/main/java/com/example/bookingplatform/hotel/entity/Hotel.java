@@ -18,12 +18,12 @@ import java.util.List;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String name;
     @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "hotel")
+    @OneToMany(mappedBy = "hotel" , cascade = CascadeType.ALL)
     private List<Room> rooms;
 }

@@ -13,8 +13,9 @@ import lombok.NoArgsConstructor;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id ;
+    private Long id ;
     private Integer number;
+    private Integer roomCount;
     @ManyToOne
     private Hotel hotel;
 }

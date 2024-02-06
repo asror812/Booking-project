@@ -2,24 +2,24 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Booking.com</title>
+    <title>Author page</title>
     <link rel="stylesheet" th:href="@{css/style.css}" href="../static/css/style.css">
 </head>
 <body>
-    <div class="header">
-        <h1 class="logo">Booking.com</h1>
-        <div>
-            <a th:href="@{/hotel/create}">
+<div class="header-main container">
+    <h1 class="logo">Booking.com</h1>
+    <div>
+        <a th:href="@{/create}">
             <button class="btn">Add hotel</button>
-            <button class="btn">Register</button>
-            <button class="btn">Sign in</button>
-            </a>
-        </div>
-
+        </a>
+        <button class="btn">Register</button>
+        <button class="btn">Sign in</button>
     </div>
+
+</div>
 <div class="center-form">
-    <form class="search-form" th:action="@{/hotel}" method="get">
-        <select class="input" id="" name="">
+    <form class="search-form"  method="get">
+        <select class="input"  name="city">
             <option th:each="city : ${T(com.example.bookingplatform.address.entity.City).values()}"
                     th:text="${city}"
                     th:value="${city}">
@@ -27,13 +27,25 @@
         </select>
         <input class="input" type="datetime-local">
         <input class="input" type="datetime-local" >
-        <input class="input" type="number">
+        <input class="input" type="number" placeholder="N-room">
         <button class="btn secondary" type="submit">Search</button>
     </form>
 </div>
 
-    <th:block th:if="${hotels}  != null">
-            <h1 th:each="hotel :  ${hotels}" th:text="${hotel.name}"></h1>
-    </th:block>
+<div th:if="${hotels}  != null"  class="container">
+    <div class="hotel-card" th:each="hotel :  ${hotels}" >
+        <h1  th:text="${hotel.name}"></h1>
+
+        <a th:href="@{{hotelId}/rooms(hotelId = ${hotel.id})}" >
+            <button class="btn secondary"> See rooms</button>
+        </a>
+
+        <form th:action="@{{hotelId}(hotelId = ${hotel.id})}" th:method="delete">
+            <button class="btn secondary">Delete hotel</button>
+        </form>
+
+    </div>
+</div>
+
 </body>
 </html>

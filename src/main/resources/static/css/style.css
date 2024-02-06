@@ -1,15 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.header{
+.header-main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px  15%;    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
     background: #003b95;
+}
+
+.container{
+   padding-left: 10%;
+   padding-right: 10%;
 }
 
 .btn{
@@ -18,6 +20,8 @@
     cursor: pointer;
     height: 35px;
 }
+
+
 .btn:hover{
     background: #F2F6FE;
 }
@@ -42,13 +46,105 @@
     align-items: center;
     padding: 20px;
     margin-top: 20px ;
-
 }
+
 
 .input{
     padding: 5px;
     border-radius: 2px;
     height: 35px;
     border: 1px solid #003b95;
+    box-sizing: border-box;
 }
+
+.hotel-card{
+    width: 100%;
+    height: 200px;
+    margin: 20px 0 ;
+    border: 1px solid  #b5b5b5;
+    border-radius: 10px ;
+}
+
+table{
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+.login-body {
+    background:url('https://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg');
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    background-size: 100% 110%;
+}
+
+
+.login {
+        margin:0 auto;
+        max-width:500px;
+}
+.login-header {
+        color:#fff;
+        text-align:center;
+        font-size:300%;
+    }
+/*
+#rooms th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}*/
+
+
+.login-form {
+    padding-top:15px;
+    padding-bottom:10%;
+    margin:5% auto;
+    text-align:center;
+}
+
+.login-input{
+    max-width:300px;
+    width: 80%;
+    line-height:3em;
+    font-family: 'Ubuntu', sans-serif;
+    margin:1em 2em;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+}
+
+.btn1-login {
+    width:100px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    color: #003b95;
+    background: white;
+}
+
+.btn1:hover.secondary{
+    background: #042567;
+}
+
+.sign-up{
+    color:#f2f2f2;
+    margin-left:-30%;
+    cursor:pointer;
+    text-decoration:underline;
+    font-size: 100%;
+}
+
+
 

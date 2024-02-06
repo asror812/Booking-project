@@ -21,6 +21,8 @@ public class HotelCreateDto {
     @NotBlank
     private String street;
 
-    private City city;
+    @NotBlank
+    private String city;
+
 
 }

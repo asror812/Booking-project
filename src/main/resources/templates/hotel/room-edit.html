@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{../../css/style.css}" href="../../static/css/style.css">
+</head>
+<body>
+    <div class="header-main container">
+        <h1 class="logo">Booking.com</h1>
+        <div>
+        </div>
+    </div>
+
+    <div class="center-form">
+            <form class="search-form" th:action="@{/room/{id}(id = ${room.id})}" th:method="put" >
+                <input class="input" type="text" name="number" th:value="${room.number}">
+                <input class="input" type="text" name="roomCount" th:value="${room.roomCount}">
+                <button class="btn secondary" type="submit">Edit</button>
+            </form>
+        </div>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 package com.example.bookingplatform.hotel.dto;
 
 import com.example.bookingplatform.address.entity.Address;
-import com.example.bookingplatform.hotel.room.entity.Room;
+import com.example.bookingplatform.hotel.room.dto.RoomResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HotelResponseDto {
-    private Integer id;
+    private Long id;
     private String name;
     private Address address;
-    private List<Room> rooms;
+    private List<RoomResponseDto> rooms;
 }
